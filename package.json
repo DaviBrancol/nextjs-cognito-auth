@@ -1,0 +1,109 @@
+{
+  "name": "nextjs-raw-boiderplate",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build && next export",
+    "commit": "cz",
+    "start": "next start -p 3000",
+    "lint": "npx eslint **/src/**/* --ext .js,.ts,.jsx,.tsx",
+    "test": "jest --silent",
+    "test-errors": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "clsx": "^1.1.1",
+    "date-fns": "^2.17.0",
+    "formik": "^2.2.5",
+    "next": "^10.0.5",
+    "next-fonts": "^1.5.1",
+    "next-google-fonts": "^1.2.1",
+    "next-images": "^1.6.2",
+    "next-seo": "^4.7.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "react-select": "^3.1.1",
+    "react-spinners": "^0.10.6",
+    "yup": "^0.31.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@testing-library/dom": "^7.30.0",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^13.0.14",
+    "@types/node": "^14.10.1",
+    "@types/react": "^16.9.49",
+    "@types/yup": "^0.29.11",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "@tailwindcss/jit": "^0.1.1",
+    "autoprefixer": "^10.2.5",
+    "babel-jest": "^26.6.3",
+    "commitizen": "^4.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.3.7",
+    "lint-staged": "^10.5.3",
+    "postcss": "^8.1.8",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-import": "^12.0.1",
+    "prettier": "2.2.1",
+    "tailwindcss": "^2.0.2",
+    "typescript": "^4.0.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "types": {
+        "feat": {
+          "description": "Added a new feature to the project",
+          "title": "Features"
+        },
+        "fix": {
+          "description": "Fixed a feature that was in the project",
+          "title": "Fixes"
+        },
+        "merge": {
+          "description": "Merge between branches and codes",
+          "title": "merges"
+        },
+        "docs": {
+          "description": "Documentation changes and updates for changelog and readme",
+          "title": "Documentation changes"
+        },
+        "test": {
+          "description": "Adding missing tests or correcting existing tests",
+          "title": "Tests"
+        },
+        "other": {
+          "description": "Other kinds of commit",
+          "title": "Other"
+        }
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --cache --fix"
+  }
+}

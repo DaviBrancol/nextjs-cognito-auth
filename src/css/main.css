@@ -1,0 +1,96 @@
+/*
+
+  CSS Indexes
+
+  - General
+  - Header
+  - Sidebar
+  - Main Content
+
+*/
+
+/* ------- General ------- */
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-black.otf');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-extrabold.otf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-bold.otf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-semibold.otf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova.otf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-regular-italic.otf');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ProximaNova';
+  src: url('/fonts/proxima-nova-light.otf');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  outline: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  font-family: 'ProximaNova', sans-serif;
+  box-sizing: border-box;
+  @apply bg-primary-500;
+}
+
+/* Inner Container Component */
+
+.inner-height {
+  min-height: calc(100vh - 5rem);
+}
