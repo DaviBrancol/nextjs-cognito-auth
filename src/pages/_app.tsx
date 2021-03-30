@@ -9,15 +9,20 @@ import '@css/components.css'
 import '@css/utilities.css'
 
 // Application Import
-import { ExampleProvider } from '@context/index'
+import { AuthProvider } from '@context/index'
+import { BrancolProvider } from '@brancol-ui/react'
+
+import '@lib/cognito/config'
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <DefaultSeo titleTemplate={router.route === '/' ? 'My Application' : '%s | My Application'} />
-      <ExampleProvider>
-        <Component {...pageProps} />
-      </ExampleProvider>
+      <BrancolProvider>
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
+      </BrancolProvider>
     </>
   )
 }

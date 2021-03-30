@@ -1,1 +1,1 @@
-export { ExampleProvider, useExample } from './Example'
+export { AuthProvider, useAuth } from './Auth'

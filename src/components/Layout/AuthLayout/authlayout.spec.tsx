@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 import { cleanup, render, waitFor } from '@testing-library/react'
 
 // Application Import
-import { MainLayout } from './'
+import { AuthLayout } from './'
 import { AuthProvider } from '@context/index'
 import { BrancolProvider } from '@brancol-ui/react'
 
@@ -14,7 +14,7 @@ const Mocking = () => {
   return (
     <BrancolProvider>
       <AuthProvider>
-        <MainLayout />
+        <AuthLayout />
       </AuthProvider>
     </BrancolProvider>
   )
@@ -30,7 +30,7 @@ jest.mock('next/router', () => ({
   },
 }))
 
-describe('[Layout] - Main Layout', () => {
+describe('[Layout] - Auth Layout', () => {
   afterEach(() => {
     cleanup()
   })
@@ -38,7 +38,7 @@ describe('[Layout] - Main Layout', () => {
   it('should be in loading stage', async () => {
     const { findByTestId } = render(<Mocking />)
 
-    const loadingContent = findByTestId('main-loading-container')
+    const loadingContent = findByTestId('auth-loading-container')
 
     await waitFor(() => expect(loadingContent).toBeDefined())
   })
@@ -53,7 +53,7 @@ describe('[Layout] - Main Layout', () => {
     }))
     const { findByTestId } = render(<Mocking />)
 
-    const loadedContent = findByTestId('main-loaded-container')
+    const loadedContent = findByTestId('auth-loaded-container')
 
     await waitFor(() => expect(loadedContent).toBeDefined())
   })

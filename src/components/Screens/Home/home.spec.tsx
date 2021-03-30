@@ -5,15 +5,28 @@ import { cleanup, render, screen, waitFor } from '@testing-library/react'
 
 // Application Import
 import { HomeScreen } from './'
-import { ExampleProvider } from '@context/index'
+import { AuthProvider } from '@context/index'
+import { BrancolProvider } from '@brancol-ui/react'
 
 // /** @test {Home Screen} */
 
+jest.mock('next/router', () => ({
+  useRouter() {
+    return {
+      route: '/',
+      pathname: '/',
+      push: jest.fn(),
+    }
+  },
+}))
+
 const Mocking = () => {
   return (
-    <ExampleProvider>
-      <HomeScreen />
-    </ExampleProvider>
+    <BrancolProvider>
+      <AuthProvider>
+        <HomeScreen />
+      </AuthProvider>
+    </BrancolProvider>
   )
 }
 

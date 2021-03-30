@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: ['./src/{components,pages}/**/*.{js,ts,jsx,tsx}'],
+    enabled: process.env.NODE_ENV === "production",
+    content: ['./node_modules/@brancol-ui/**/*.{js,ts,jsx,tsx}', './src/{components,pages}/**/*.{js,ts,jsx,tsx}'],
   },
   prefix: '',
   important: false,
@@ -72,6 +72,11 @@ module.exports = {
         },
       },
     },
+  },
+  variants: {
+    extend: {
+      display: ['responsive'],
+    }
   },
   corePlugins: {},
   plugins: [],

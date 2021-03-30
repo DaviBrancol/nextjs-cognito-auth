@@ -1,2 +1,3 @@
 export { HomeScreen } from './Home'
-export { ExampleScreen } from './Example'
+export { LoginScreen } from './Login'
+export { RegisterScreen } from './Register'

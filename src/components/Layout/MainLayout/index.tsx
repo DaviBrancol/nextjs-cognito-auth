@@ -2,19 +2,19 @@
 import { BeatLoader } from 'react-spinners'
 
 // Application Import
-import { useExample } from '@context/index'
+import { useAuth } from '@context/index'
 
 // Components Import
 import { Header, Sidebar } from '@components/UI'
 
 export const MainLayout: React.FC = ({ children }) => {
-  const { state } = useExample()
+  const auth = useAuth()
 
-  if (state.isLoading) {
+  if (auth.state.isLoading) {
     return (
       <div
         className="bg-white w-full h-screen flex justify-center items-center"
-        data-testid="loading-container"
+        data-testid="main-loading-container"
       >
         <BeatLoader color="#0D66C4" />
       </div>
@@ -22,8 +22,8 @@ export const MainLayout: React.FC = ({ children }) => {
   }
 
   return (
-    <div data-testid="loaded-container">
-      <Header />
+    <div data-testid="main-loaded-container">
+      <Header name={auth.state.user?.attributes?.name} logout={auth.operations.logout} />
       <Sidebar />
       <div className="p-8 z-30 bg-gray-100 ml-20 mt-20 inner-height">{children}</div>
     </div>

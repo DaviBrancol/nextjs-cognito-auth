@@ -1,4 +1,16 @@
+/* eslint-disable camelcase */
 import { IconType } from 'react-icons'
+
+// Cognito User
+
+export interface CognitoUser {
+  attributes: {
+    email: string
+    email_verified: boolean
+    name: string
+    sub: string
+  }
+}
 
 // Sidebar Classes
 
