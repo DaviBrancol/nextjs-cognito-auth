@@ -4,9 +4,7 @@ import type { AppProps } from 'next/app'
 
 // CSS Import
 import '@css/main.css'
-import '@css/base.css'
-import '@css/components.css'
-import '@css/utilities.css'
+import '@css/tailwind.css'
 
 // Application Import
 import { AuthProvider } from '@context/index'
